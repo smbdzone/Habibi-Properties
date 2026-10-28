@@ -1,0 +1,315 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #002F45;
+  --secondary: #BCD4CC;
+  --accent: #E3A750;
+
+  /* Neutral Colors */
+  --black: #000000;
+
+
+  --gray-1: #b2b2b2;
+  --gray-2: #555555;
+  --gray-3: #353b3c;
+
+  /* Dark Colors */
+  --dark: #1f1f1f;
+  --dark-blue: #003049;
+
+  /* Ivory */
+  --ivory: #fffff0;
+
+  /* Gradient */
+
+  --golden-gradient: linear-gradient(180deg,
+      #E7CEA5 14.36%,
+      #EDC184 41.76%,
+      #B18336 69.15%);
+  ;
+
+  --gradient: linear-gradient(90deg,
+      #303030 0%,
+      #669bbc 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+
+
+  --color-charcoal: #242424;
+  --color-ivory: #faf8f2;
+  --color-orange: #c96a32;
+  --color-orange-hover: #b55d2c;
+  --color-stone: #d8d2c8;
+  --color-text: #2b2b2b;
+
+  --color-success: #4f7a57;
+  --color-error: #b03a2e;
+  --color-warning: #c68a2d;
+
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-brand: 10px;
+}
+
+
+
+.golden-bg-bordered {
+  border: 1px solid transparent;
+  background:
+    var(--golden-gradient) padding-box,
+    var(--golden-gradient) border-box;
+}
+
+.golden-bg {
+  background-image: var(--golden-gradient)
+}
+
+.border-golden {
+  position: relative;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--primary), var(--primary)) padding-box,
+    var(--golden-gradient) border-box;
+}
+
+.golden-text {
+  background: var(--golden-gradient);
+  background-position: center;
+  background-clip: text;
+  color: transparent;
+  --wekit-backgroun-clip: text;
+}
+
+/* Custom utility classes for colors */
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+body {
+  background: #faf8f2;
+  color: #2b2b2b;
+  font-family: var(--font-sans);
+}
+
+/* Blog Preview Prose Styles */
+.prose {
+  color: #374151;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: #002F45;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose ul,
+.prose ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose a {
+  color: #002F45;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #001a26;
+}
+
+/* Blog content styles for raw HTML from Jodit editor */
+.blog-content h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  color: #002F45;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+  color: #002F45;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  color: #002F45;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.blog-content a {
+  color: #002F45;
+  text-decoration: underline;
+}
+
+.blog-content a:hover {
+  opacity: 0.8;
+}
+
+.blog-content strong,
+.blog-content b {
+  font-weight: 600;
+}
+
+.blog-content em,
+.blog-content i {
+  font-style: italic;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #002F45;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.blog-content th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+/* Jodit editor: show bullets and numbers for ul/ol inside editable area */
+.jodit-editor-content-lists ul,
+.jodit-editor-content-lists ol,
+.jodit-wysiwyg ul,
+.jodit-wysiwyg ol {
+  margin-bottom: 0.75rem;
+  margin-top: 0.5rem;
+  padding-left: 1.75rem;
+  list-style-position: outside;
+}
+
+.jodit-editor-content-lists ul,
+.jodit-wysiwyg ul {
+  list-style-type: disc;
+}
+
+.jodit-editor-content-lists ul ul,
+.jodit-wysiwyg ul ul {
+  list-style-type: circle;
+}
+
+.jodit-editor-content-lists ul ul ul,
+.jodit-wysiwyg ul ul ul {
+  list-style-type: square;
+}
+
+.jodit-editor-content-lists ol,
+.jodit-wysiwyg ol {
+  list-style-type: decimal;
+}
+
+.jodit-editor-content-lists ol ol,
+.jodit-wysiwyg ol ol {
+  list-style-type: lower-alpha;
+}
+
+.jodit-editor-content-lists ol ol ol,
+.jodit-wysiwyg ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.jodit-editor-content-lists li,
+.jodit-wysiwyg li {
+  display: list-item;
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+
+/* Toast Animation */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}

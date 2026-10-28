@@ -1,0 +1,26 @@
+import React from 'react'
+
+interface IInput {
+
+    name: string;
+    value?: string | number | undefined;
+    handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    placeholder?: string;
+    inputClassName?: string;
+    label?: string
+}
+
+const Textarea = ({ name, value, handleChange, placeholder, inputClassName, label }: IInput) => {
+    return (
+        <div className='flex flex-col items-start justify-start gap-1 w-full'>
+            {label ? (<label className='text-white font-heading tracking-wide px-2 text-base '>
+                {label}
+            </label>) : null}
+            <textarea name={name} value={value} onChange={handleChange} placeholder={placeholder}
+                className={`${inputClassName} w-full bg-black rounded-xl px-3 py-1 focus:border-golden text-white outline-none`}
+            />
+        </div>
+    )
+}
+
+export default Textarea
