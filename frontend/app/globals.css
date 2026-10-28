@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+
+  /* Primary */
+  --primary: #303030;
+  /* Secondary */
+  --secondary: #669bbc;
+
+  /* Neutral Colors */
+  --black: #000000;
+
+  --white: #ffffff;
+
+  --gray-1: #b2b2b2;
+  --gray-2: #555555;
+  --gray-3: #353b3c;
+
+  /* Dark Colors */
+  --dark: #1f1f1f;
+  --dark-blue: #003049;
+
+  /* Ivory */
+  --ivory: #fffff0;
+
+  /* Gradient */
+
+  --golden-gradient: linear-gradient(180deg,
+      #E7CEA5 14.36%,
+      #EDC184 41.76%,
+      #B18336 69.15%);
+  ;
+
+  --gradient: linear-gradient(90deg,
+      #303030 0%,
+      #669bbc 100%);
+
+}
+
+
+@theme inline {
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  /* --color-black: var(--black);
+  --color-white: var(--white); */
+  --color-primary-1: #D4AF37;
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+
+  --color-dark: var(--dark);
+  --color-dark-blue: var(--dark-blue);
+
+  --color-ivory: var(--ivory);
+
+  /* Fonts */
+  --font-body: var(--font-inter);
+  --font-heading: var(--font-dm-serif);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-inter), var(--font-dm-serif);
+}
+
+.golden-bg-bordered {
+  border: 1px solid transparent;
+  background:
+    var(--golden-gradient) padding-box,
+    var(--golden-gradient) border-box;
+}
+
+.golden-bg {
+  background-image: var(--golden-gradient)
+}
+
+.border-golden {
+  position: relative;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--primary), var(--primary)) padding-box,
+    var(--golden-gradient) border-box;
+}
+
+.golden-text {
+  background: var(--golden-gradient);
+  background-position: center;
+  background-clip: text;
+  color: transparent;
+  --wekit-backgroun-clip: text;
+}
+
+.section-container {
+  @apply max-w-7xl py-12 sm:py-16 lg:py-22 px-2 sm:px-3 lg:px-6 mx-auto
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-image: var(--golden-gradient) !important;
+  width: 20px !important;
+  height: 5px !important;
+
+}
+
+.swiper-slide {
+  @apply relative transition-all duration-300;
+}
+
+.swiper-slide.swiper-slide-active {
+  @apply z-20;
+}
+
+.swiper-slide.swiper-slide-active .blog-card {
+  @apply scale-100;
+}
+
+.swiper-slide.swiper-slide-next {
+  @apply z-10;
+}
+
+.swiper-slide.swiper-slide-next .blog-card {
+  @apply scale-80 translate-y-10 translate-x-4;
+}
+
+.swiper-slide.swiper-slide-prev {
+  @apply z-0;
+}
+
+.swiper-slide.swiper-slide-prev .blog-card {
+  @apply scale-70 translate-y-10 hidden;
+}
+
+.swiper-slide.swiper-slide-next+.swiper-slide {
+  @apply z-0;
+}
+
+.swiper-slide.swiper-slide-next+.swiper-slide .blog-card {
+  @apply scale-50 translate-y-16;
+}
